@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator.Server", "Chatin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator.Server.Tests", "Chatinator.Server.Tests\Chatinator.Server.Tests.csproj", "{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator.Client", "Chatinator.Client\Chatinator.Client.csproj", "{7AA8F5DF-2216-449F-AE10-40B537A48639}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA8F5DF-2216-449F-AE10-40B537A48639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA8F5DF-2216-449F-AE10-40B537A48639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA8F5DF-2216-449F-AE10-40B537A48639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA8F5DF-2216-449F-AE10-40B537A48639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
