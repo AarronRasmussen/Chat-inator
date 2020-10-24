@@ -1,6 +1,7 @@
 ﻿using System;
 using Chatinator.Client.InMemory;
 using Chatinator.Client.Interfaces;
+using Chatinator.Client.Tcp;
 using Chatinator.Client.UI;
 using Terminal.Gui;
 
@@ -13,7 +14,7 @@ namespace Chatinator.Client
             Application.Init();
             Colors.Base.Normal = Application.Driver.MakeAttribute(Color.White, Color.Black);
 
-            IChatManager manager = new InMemoryChatManager();
+            IChatManager manager = new TcpChatManager();
 
             ChatView chatView = new ChatView
             {

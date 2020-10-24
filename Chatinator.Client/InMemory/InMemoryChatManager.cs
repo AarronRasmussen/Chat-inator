@@ -1,9 +1,5 @@
 ﻿using Chatinator.Client.Interfaces;
-using Chatinator.Client.UI;
 using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Chatinator.Client.InMemory
@@ -22,7 +18,7 @@ namespace Chatinator.Client.InMemory
 
         internal InMemoryChatManager()
         {
-            SendFakeMessagesAsync();
+            _ = SendFakeMessagesAsync();
         }
 
         async Task SendFakeMessagesAsync()
