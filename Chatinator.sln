@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator-Server", "Chatinator-Server\Chatinator-Server.csproj", "{C8523AF2-81B0-4290-ADE4-C62C76580FAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator.Server", "Chatinator-Server\Chatinator.Server.csproj", "{C8523AF2-81B0-4290-ADE4-C62C76580FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chatinator.Servers.Tests", "Chatinator.Servers.Tests\Chatinator.Servers.Tests.csproj", "{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C8523AF2-81B0-4290-ADE4-C62C76580FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8523AF2-81B0-4290-ADE4-C62C76580FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8523AF2-81B0-4290-ADE4-C62C76580FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9E08E1-4799-4F42-BFAB-3EC5D51295FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Chatinator_Server
+namespace Chatinator.Server
 {
     class Program
     {
