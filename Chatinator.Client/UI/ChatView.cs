@@ -1,3 +1,5 @@
+using Chatinator.Client.Interfaces;
+using System;
 using System.Collections.Generic;
 using Terminal.Gui;
 
@@ -5,9 +7,33 @@ namespace Chatinator.Client.UI
 {
     internal sealed class ChatView : View
     {
+        private IChatChannel _channel;
+        private FrameView _listFrame;
+
         internal TranscriptListView ListView { get; }
         internal ScrollBarView ListScrollBarView { get; }
         internal ComposeTextView TextView { get; }
+
+        internal IChatChannel Channel
+        {
+            get => _channel;
+            set
+            {
+                if (_channel != null)
+                {
+                    _channel.OnMessageReceived -= OnMessageReceived;
+                }
+
+                _listFrame.Title = value.DisplayName;
+                _channel = value;
+
+                if (_channel != null)
+                {
+                    _channel.OnMessageReceived += OnMessageReceived;
+                }
+            }
+
+        }
 
         public ChatView()
         {
@@ -30,7 +56,7 @@ namespace Chatinator.Client.UI
                 Height = Dim.Fill(),
             };
 
-            var listFrame = new FrameView("Chatinator")
+            _listFrame = new FrameView("Chatinator")
             {
                 X = 0,
                 Y = 0,
@@ -38,7 +64,7 @@ namespace Chatinator.Client.UI
                 Height = Dim.Fill() - 5,
             };
 
-            listFrame.Add(ListView, ListScrollBarView);
+            _listFrame.Add(ListView, ListScrollBarView);
 
             TextView = new ComposeTextView
             {
@@ -61,7 +87,7 @@ namespace Chatinator.Client.UI
 
             textFrame.Add(TextView);
 
-            Add(listFrame);
+            Add(_listFrame);
             Add(textFrame);
         }
 
@@ -71,7 +97,7 @@ namespace Chatinator.Client.UI
             ListScrollBarView.Position = ListView.TopItem;
         }
 
-        void ProcessUserMessage(string text)
+        async void ProcessUserMessage(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -85,7 +111,7 @@ namespace Chatinator.Client.UI
             else
             {
                 TextView.Text = "";
-                ListView.AddItem(text, true);
+                await Channel.SendMessageAsync(text);
             }
         }
 
@@ -99,6 +125,14 @@ namespace Chatinator.Client.UI
             {
                 ListView.BottomItem += 1;
             }
+        }
+
+        private void OnMessageReceived(IChatMessage message)
+        {
+            Application.MainLoop.Invoke(() =>
+            {
+                ListView.AddItem($"<{message.Author.DisplayName}> {message.Text}", true);
+            });
         }
     }
 }
